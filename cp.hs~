@@ -9,4 +9,6 @@ main = do
        args <- getArgs
        if length args /= 2
            then usage
-	   else copyFile (head args) (last args)
+           else if head args == last args 
+	   	then  putStrLn "Done."
+	   	else copyFile (head args) (last args)
